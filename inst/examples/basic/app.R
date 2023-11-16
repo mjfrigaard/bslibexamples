@@ -27,5 +27,11 @@ server <- function(input, output, session) {
 
 }
 
-shiny::shinyApp(ui, server)
-
+basic_app <- function(options = list()) {
+  shiny::shinyApp(
+        ui = ui,
+        server = server,
+        options = options
+      )
+}
+basic_app()

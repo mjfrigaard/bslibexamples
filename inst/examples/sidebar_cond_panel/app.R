@@ -1,4 +1,4 @@
-shiny::shinyApp(
+ui <- function() {
   bslib::page_navbar(
     title = "Conditional sidebar",
     id = "nav",
@@ -12,8 +12,11 @@ shiny::shinyApp(
     ),
     bslib::nav_panel("Page 1", "Page 1 contents"),
     bslib::nav_panel("Page 2", "Page 2 contents")
-  ),
-  server = function(...) {
-    # no server logic required
-  }
-)
+  )
+}
+
+server <- function(input, output, session) {
+  # no server logic required
+}
+
+shiny::shinyApp(ui = ui, server = server)
